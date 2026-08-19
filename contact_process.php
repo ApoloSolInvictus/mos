@@ -1,37 +1,56 @@
 <?php
 
-    $to = "rockybd1995@gmail.com";
-    $from = $_REQUEST['email'];
-    $name = $_REQUEST['name'];
-    $subject = $_REQUEST['subject'];
-    $number = $_REQUEST['number'];
-    $cmessage = $_REQUEST['message'];
+declare(strict_types=1);
 
-    $headers = "From: $from";
-	$headers = "From: " . $from . "\r\n";
-	$headers .= "Reply-To: ". $from . "\r\n";
-	$headers .= "MIME-Version: 1.0\r\n";
-	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    exit('Method not allowed');
+}
 
-    $subject = "You have a message from your Bitmap Photography.";
+function clean_field(string $key, int $maxLength = 500): string
+{
+    $value = filter_input(INPUT_POST, $key, FILTER_UNSAFE_RAW);
+    if (!is_string($value)) {
+        return '';
+    }
 
-    $logo = 'img/logo.png';
-    $link = '#';
+    $value = trim($value);
+    $value = str_replace(["\r", "\n"], ' ', $value);
 
-	$body = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Express Mail</title></head><body>";
-	$body .= "<table style='width: 100%;'>";
-	$body .= "<thead style='text-align: center;'><tr><td style='border:none;' colspan='2'>";
-	$body .= "<a href='{$link}'><img src='{$logo}' alt=''></a><br><br>";
-	$body .= "</td></tr></thead><tbody><tr>";
-	$body .= "<td style='border:none;'><strong>Name:</strong> {$name}</td>";
-	$body .= "<td style='border:none;'><strong>Email:</strong> {$from}</td>";
-	$body .= "</tr>";
-	$body .= "<tr><td style='border:none;'><strong>Subject:</strong> {$csubject}</td></tr>";
-	$body .= "<tr><td></td></tr>";
-	$body .= "<tr><td colspan='2' style='border:none;'>{$cmessage}</td></tr>";
-	$body .= "</tbody></table>";
-	$body .= "</body></html>";
+    return substr($value, 0, $maxLength);
+}
 
-    $send = mail($to, $subject, $body, $headers);
+$name = clean_field('name', 120);
+$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+$subject = clean_field('subject', 150);
+$message = clean_field('message', 2000);
 
-?>
+if (!$email || $name === '' || $message === '') {
+    http_response_code(400);
+    exit('Please provide a valid name, email, and message.');
+}
+
+$to = 'ronnywoods77@gmail.com';
+$mailSubject = $subject !== '' ? $subject : 'New Mos Studio website message';
+$body = implode("\n", [
+    'New message from Mos Studio website',
+    '',
+    'Name: ' . $name,
+    'Email: ' . $email,
+    '',
+    'Message:',
+    $message,
+]);
+
+$headers = [
+    'From: Mos Studio Website <no-reply@mos.wstudio3d.com>',
+    'Reply-To: ' . $email,
+    'MIME-Version: 1.0',
+    'Content-Type: text/plain; charset=UTF-8',
+    'X-Content-Type-Options: nosniff',
+];
+
+$sent = mail($to, $mailSubject, $body, implode("\r\n", $headers));
+
+http_response_code($sent ? 200 : 500);
+echo $sent ? 'Message sent.' : 'Unable to send message.';

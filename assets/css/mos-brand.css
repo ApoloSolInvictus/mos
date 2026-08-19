@@ -1,0 +1,80 @@
+.logo a,
+.mos-mobile-brand {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.logo img {
+  display: block;
+  width: 132px;
+  max-width: 100%;
+  height: auto;
+}
+
+.footer-logo img {
+  width: 160px;
+  max-width: 100%;
+  height: auto;
+}
+
+.preloader .preloader-img img {
+  max-width: 64px;
+}
+
+.mobile_menu .slicknav_menu {
+  min-height: 76px;
+  padding: 0;
+}
+
+.mobile_menu .slicknav_menu .slicknav_brand {
+  float: left;
+  padding: 8px 0;
+}
+
+.mos-mobile-brand img {
+  display: block;
+  width: 124px;
+  height: auto;
+}
+
+.mobile_menu .slicknav_menu .slicknav_btn {
+  margin-top: 21px;
+}
+
+.sticky-bar .logo img {
+  width: 116px;
+}
+
+.mos-map-placeholder {
+  min-height: 360px;
+  background:
+    linear-gradient(135deg, rgba(209, 159, 104, 0.2), rgba(0, 0, 0, 0.62)),
+    url("../img/gallery/section_bg02.png") center / cover;
+}
+
+@media (max-width: 991px) {
+  .header-area .main-header {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  .logo img {
+    width: 124px;
+  }
+}
+
+@media (max-width: 575px) {
+  .mos-mobile-brand img,
+  .logo img {
+    width: 112px;
+  }
+
+  .mobile_menu .slicknav_menu {
+    min-height: 68px;
+  }
+
+  .mobile_menu .slicknav_menu .slicknav_btn {
+    margin-top: 17px;
+  }
+}

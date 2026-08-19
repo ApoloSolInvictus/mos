@@ -1,0 +1,14 @@
+{
+  "name": "Mos Studio - Barber Shop",
+  "short_name": "Mos Studio",
+  "icons": [
+    {
+      "src": "assets/img/favicon.png",
+      "sizes": "1600x1400",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone"
+}
