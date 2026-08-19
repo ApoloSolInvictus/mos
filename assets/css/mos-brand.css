@@ -21,6 +21,21 @@
   max-width: 64px;
 }
 
+.preloader .preloader-circle,
+.preloader .preloader-img {
+  background: #000;
+}
+
+.preloader .preloader-img {
+  width: 82px;
+  height: 82px;
+  padding-top: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .mobile_menu .slicknav_menu {
   min-height: 0;
   padding: 0;
