@@ -37,8 +37,7 @@
       menu.slicknav({
         prependTo: ".mobile_menu",
         closedSymbol: '+',
-        openedSymbol:'-',
-        brand: '<a class="mos-mobile-brand" href="index.html"><img src="assets/img/logo/logo.png" alt="Mos Studio"></a>'
+        openedSymbol:'-'
       });
     };
 

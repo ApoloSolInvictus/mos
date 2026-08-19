@@ -1,5 +1,4 @@
-.logo a,
-.mos-mobile-brand {
+.logo a {
   display: inline-flex;
   align-items: center;
   line-height: 0;
@@ -23,23 +22,12 @@
 }
 
 .mobile_menu .slicknav_menu {
-  min-height: 76px;
+  min-height: 0;
   padding: 0;
 }
 
-.mobile_menu .slicknav_menu .slicknav_brand {
-  float: left;
-  padding: 8px 0;
-}
-
-.mos-mobile-brand img {
-  display: block;
-  width: 124px;
-  height: auto;
-}
-
 .mobile_menu .slicknav_menu .slicknav_btn {
-  margin-top: 21px;
+  margin-top: 0;
 }
 
 .sticky-bar .logo img {
@@ -65,16 +53,7 @@
 }
 
 @media (max-width: 575px) {
-  .mos-mobile-brand img,
   .logo img {
     width: 112px;
-  }
-
-  .mobile_menu .slicknav_menu {
-    min-height: 68px;
-  }
-
-  .mobile_menu .slicknav_menu .slicknav_btn {
-    margin-top: 17px;
   }
 }
