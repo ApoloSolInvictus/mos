@@ -281,3 +281,29 @@
   });
 
 })(jQuery);
+
+window.googleTranslateElementInit = function () {
+  if (!window.google || !google.translate) {
+    return;
+  }
+
+  new google.translate.TranslateElement({
+    pageLanguage: 'es',
+    includedLanguages: 'en,pt,fr,de,it,zh-CN,ja,ko,ar,ru',
+    autoDisplay: false
+  }, 'google_translate_element');
+};
+
+document.addEventListener('DOMContentLoaded', function () {
+  var translateBox = document.querySelector('.mos-translate');
+  var translateButton = document.querySelector('.mos-translate__button');
+
+  if (!translateBox || !translateButton) {
+    return;
+  }
+
+  translateButton.addEventListener('click', function () {
+    var isOpen = translateBox.classList.toggle('is-open');
+    translateButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+});
