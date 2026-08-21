@@ -131,8 +131,14 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-11">
                         <!-- about-img -->
-                        <div class="about-img ">
-                            <img src="assets/img/gallery/about.png" alt="">
+                        <div class="about-img mos-about-video-frame">
+                            <video class="mos-about-video" data-mos-about-video autoplay muted loop playsinline preload="metadata" poster="assets/img/gallery/about.png" aria-label="Video de Mos Studio Barber Shop">
+                                <source src="assets/video/mos-web.mp4" type="video/mp4">
+                                Tu navegador no soporta video HTML5.
+                            </video>
+                            <button class="mos-about-video__audio" data-mos-audio-toggle type="button" aria-label="Activar audio del video" aria-pressed="false" title="Activar audio">
+                                <i class="fas fa-volume-mute" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
@@ -605,6 +611,43 @@
     <!-- Jquery Plugins, main Jquery -->	
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script>
+        (function () {
+            var video = document.querySelector("[data-mos-about-video]");
+            var button = document.querySelector("[data-mos-audio-toggle]");
+
+            if (!video || !button) {
+                return;
+            }
+
+            var icon = button.querySelector("i");
+
+            function syncAudioButton() {
+                var isMuted = video.muted;
+                button.setAttribute("aria-pressed", String(!isMuted));
+                button.setAttribute("aria-label", isMuted ? "Activar audio del video" : "Desactivar audio del video");
+                button.setAttribute("title", isMuted ? "Activar audio" : "Desactivar audio");
+
+                if (icon) {
+                    icon.className = isMuted ? "fas fa-volume-mute" : "fas fa-volume-up";
+                }
+            }
+
+            button.addEventListener("click", function () {
+                video.muted = !video.muted;
+
+                if (!video.muted) {
+                    video.play().catch(function () {});
+                }
+
+                syncAudioButton();
+            });
+
+            video.addEventListener("volumechange", syncAudioButton);
+            video.play().catch(function () {});
+            syncAudioButton();
+        })();
+    </script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     
     </body>
