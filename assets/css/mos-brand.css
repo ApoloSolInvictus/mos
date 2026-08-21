@@ -172,6 +172,16 @@ body {
   top: 0 !important;
 }
 
+.slider-area {
+  background-image:
+    linear-gradient(90deg, rgba(12, 13, 14, 0.95) 0%, rgba(12, 13, 14, 0.9) 26%, rgba(12, 13, 14, 0.46) 58%, rgba(12, 13, 14, 0.08) 100%),
+    url("../img/hero/mos-studio-hero.jpg");
+  background-position: center center, center right;
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: scroll;
+}
+
 @media (max-width: 991px) {
   .header-area .main-header {
     padding-top: 12px !important;
@@ -184,6 +194,10 @@ body {
 }
 
 @media (max-width: 575px) {
+  .slider-area {
+    background-position: center center, 68% center;
+  }
+
   .logo img {
     width: 112px;
   }
