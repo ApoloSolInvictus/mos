@@ -206,6 +206,23 @@ body {
   background-image: url("../img/hero/mos-studio-hero-2.jpg");
 }
 
+.service-area .services-caption .service-icon .mos-service-icon-img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 105px;
+  height: 105px;
+  margin: 0 auto 42px;
+  object-fit: cover;
+  box-shadow: 0 14px 28px rgba(29, 36, 52, 0.16);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.service-area .services-caption:hover .service-icon .mos-service-icon-img {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 32px rgba(29, 36, 52, 0.22);
+}
+
 @media (max-width: 991px) {
   .header-area .main-header {
     padding-top: 12px !important;
