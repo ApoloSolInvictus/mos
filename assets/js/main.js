@@ -56,6 +56,7 @@
       BasicSlider.slick({
         autoplay: true,
         autoplaySpeed: 5000,
+        infinite: true,
         dots: false,
         fade: true,
         arrows: false, 
