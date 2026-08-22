@@ -223,6 +223,37 @@ body {
   box-shadow: 0 18px 32px rgba(29, 36, 52, 0.22);
 }
 
+.mos-footer-info .info1,
+.mos-footer-location .info1 {
+  text-transform: none;
+}
+
+.mos-footer-contact h4 a {
+  color: #d19f68;
+}
+
+.mos-footer-contact h4 a span {
+  color: #fff;
+}
+
+.mos-footer-contact p a {
+  color: #bdbdbd;
+  overflow-wrap: anywhere;
+}
+
+.mos-footer-contact h4 a:hover,
+.mos-footer-contact p a:hover {
+  color: #fff;
+}
+
+.mos-footer-list ul li,
+.mos-footer-list ul li span {
+  color: #7c7c7c;
+  font-size: 15px;
+  font-weight: 300;
+  text-transform: none;
+}
+
 @media (max-width: 991px) {
   .header-area .main-header {
     padding-top: 12px !important;
