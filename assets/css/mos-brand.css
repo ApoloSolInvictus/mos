@@ -176,6 +176,13 @@ body {
   background: #0c0d0e;
 }
 
+.slider-area2 {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.66) 48%, rgba(0, 0, 0, 0.58) 100%),
+    url("../img/gallery/pages-hero.jpeg") center center / cover no-repeat !important;
+  background-position: center center !important;
+}
+
 .mos-hero-slide {
   position: relative;
   isolation: isolate;
