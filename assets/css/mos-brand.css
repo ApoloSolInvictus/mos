@@ -285,3 +285,17 @@ body {
     width: 112px;
   }
 }
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .best-pricing .pricing-img .pricing-img2 {
+    display: block;
+    left: 8%;
+    width: 33%;
+  }
+}
+
+@media (max-width: 767px) {
+  .best-pricing .container {
+    display: none;
+  }
+}
