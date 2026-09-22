@@ -299,3 +299,95 @@ body {
     display: none;
   }
 }
+
+.mos-service-detail {
+  padding: 88px 0 104px;
+  background: #fffcf9;
+}
+
+.mos-service-detail__header {
+  max-width: 760px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.mos-service-detail__eyebrow {
+  display: block;
+  margin-bottom: 10px;
+  color: #d19f68;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.mos-service-detail__title {
+  margin-bottom: 16px;
+  color: #1d2434;
+  font-size: 42px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.mos-service-detail__description {
+  max-width: 680px;
+  margin: 0 auto;
+  color: #10285d;
+  line-height: 1.8;
+}
+
+.mos-service-price-list {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0;
+  border-top: 1px solid #e7e0d8;
+}
+
+.mos-service-price-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 4px;
+  border-bottom: 1px solid #e7e0d8;
+  color: #1d2434;
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.mos-service-price-list__amounts {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 16px;
+  color: #d19f68;
+  white-space: nowrap;
+}
+
+.mos-service-price-list__amounts span:last-child {
+  color: #926538;
+}
+
+@media (max-width: 767px) {
+  .mos-service-detail {
+    padding: 64px 0 78px;
+  }
+
+  .mos-service-detail__header {
+    margin-bottom: 28px;
+  }
+
+  .mos-service-detail__title {
+    font-size: 34px;
+  }
+
+  .mos-service-price-list li {
+    gap: 12px;
+    padding: 16px 0;
+    font-size: 15px;
+  }
+
+  .mos-service-price-list__amounts {
+    gap: 8px;
+    font-size: 14px;
+  }
+}
